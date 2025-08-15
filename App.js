@@ -1,15 +1,17 @@
+import CounterApp from './CounterApp';
 
 
-import {View,Text,StyleSheet} from 'react-native';
-import CounterApp from './CounterApp.js';
+import {SafeAreaView,StyleSheet} from 'react-native';
+import ColorChangerApp from './ColorChangerApp.js';
+import CounterApp from "./CounterApp.js";
 export default function App() {
-  
 
-  
   return (
-   <View style={styles.container}>
-   <CounterApp/>
-   </View>
+    
+ <SafeAreaView style={styles.container}>
+<CounterApp/>
+ <ColorChangerApp />
+ </SafeAreaView>
    )
 }
 
