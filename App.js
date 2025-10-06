@@ -1,7 +1,7 @@
 import React from "react";
 import { KeyboardAvoidingView, Platform,Image,ScrollView } from "react-native";
-import ChatScreen from "./ChatScreen";
-import Comment from "./Comment";
+import ChatBubble from "./ChatBubble.js";
+import CommentSection from "./CommentSection.js";
 
 export default function App() {
   return (
@@ -12,8 +12,8 @@ export default function App() {
     >
     
 
-      <ChatScreen />
-      <Comment />
+      <ChatBubble />
+      <CommentSection />
     </KeyboardAvoidingView>
   
   );
