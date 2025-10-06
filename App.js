@@ -1,32 +1,20 @@
-import React,{useState} from "react";
-import {SafeAreaView,StyleSheet,Button,View
-} from 'react-native';
-import ChatScreen from "./ChatScreen.js";
-import CommentInput from "./CommentInput.js";
+import React from "react";
+import { KeyboardAvoidingView, Platform,Image,ScrollView } from "react-native";
+import ChatScreen from "./ChatScreen";
+import Comment from "./Comment";
+
 export default function App() {
-  const [ page,setPage]=useState("chat");
-
-
   return (
- <SafeAreaView style={styles.container}>
- {page === "chat" &&<ChatScreen/>}
- {page === "comment"&&<CommentInput/>}
-  <View style={styles.buttons}>
-  <Button title="Go to Chat"
-  onPress={()=>setPage("chat")}/>
-  <Button title="Go to Comment"
-  onPress={()=>setPage("comment")}/>
-  </View>
- </SafeAreaView>
-   )
-}
+    
+    <KeyboardAvoidingView
+      style={{ flex: 1 }}
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+    >
+    
 
-const styles = StyleSheet.create({
-  container:{
-    flex:1
-  },
-  buttons:{
-    flex:1
-  }
+      <ChatScreen />
+      <Comment />
+    </KeyboardAvoidingView>
   
-});
+  );
+}
